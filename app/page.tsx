@@ -30,7 +30,11 @@ export default function Home() {
     <>
       {/* ══════════ NAVBAR ══════════ */}
       <nav className="navbar">
-        <a href="#home" className="navbar-logo">Rashid Khan</a>
+        <a href="#home" className="navbar-logo" aria-label="Rashid Khan">
+          <span className="logo-first">Rashid</span>
+          <span className="logo-dot">✦</span>
+          <span className="logo-last">Khan</span>
+        </a>
 
         <ul className="navbar-links">
           <li><a href="#home">Home</a></li>

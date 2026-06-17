@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* prevent horizontal scroll globally */
 }
 
 body {
@@ -32,6 +33,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* ── Navbar ── */
@@ -51,12 +54,46 @@ body {
 }
 
 .navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+.navbar-logo:hover { opacity: 0.8; }
+
+.logo-first {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.35rem;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+}
+
+.logo-dot {
+  font-size: 0.55rem;
+  color: var(--accent);
+  line-height: 1;
+  transform: translateY(-1px);
+  display: inline-block;
+  animation: logo-spin 8s linear infinite;
+}
+
+.logo-last {
   font-family: 'Syne', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.1rem;
   color: var(--navy);
-  text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+@keyframes logo-spin {
+  from { transform: translateY(-1px) rotate(0deg); }
+  to   { transform: translateY(-1px) rotate(360deg); }
 }
 
 .navbar-links {
@@ -647,14 +684,77 @@ footer span {
 }
 
 /* ── Responsive ── */
+
+/* Tablet */
 @media (max-width: 900px) {
-  .navbar { padding: 1rem 2rem; }
-  .hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; text-align: center; }
+  .navbar {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+  .navbar-socials { display: none; } /* hide socials on tablet to save space */
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 7rem 1.5rem 4rem;
+    text-align: center;
+    gap: 2rem;
+  }
   .hero-right { order: -1; }
-  .hero-photo-wrapper { width: 220px; height: 220px; }
-  .hero-photo-circle { width: 220px; height: 220px; }
-  section { padding: 4rem 2rem; }
+  .hero-photo-wrapper { width: 240px; height: 240px; }
+  .hero-photo-circle { width: 240px; height: 240px; }
+  /* Scale down orbit arcs so they don't overflow */
+  .hero-arc.arc-1 { width: 300px; height: 300px; }
+  .hero-arc.arc-2 { width: 350px; height: 350px; }
+  .hero-right { padding: 50px; }
+
+  section { padding: 4rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .work-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0.9rem 1rem;
+    gap: 0.5rem;
+  }
+  .navbar-links {
+    gap: 1.2rem;
+  }
+  .navbar-links a {
+    font-size: 0.8rem;
+  }
+  .navbar-socials { display: none; }
+  .navbar-logo { font-size: 1rem; }
+
+  .hero {
+    padding: 6.5rem 1rem 3rem;
+    gap: 1.5rem;
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
+  .hero-photo-wrapper { width: 200px; height: 200px; }
+  .hero-photo-circle { width: 200px; height: 200px; }
+  /* Hide large arcs on mobile — they cause overflow */
+  .hero-arc.arc-2 { display: none; }
+  .hero-arc.arc-1 { width: 260px; height: 260px; }
+  .hero-right { padding: 40px; }
+
+  section { padding: 3rem 1rem; }
+  .section-heading { font-size: clamp(3rem, 14vw, 5rem); }
+
+  .work-grid { gap: 1.2rem; }
+  .contact-grid { gap: 1.5rem; }
+  footer { padding: 1.5rem 1rem; }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .navbar-links { gap: 0.8rem; }
+  .navbar-links a { font-size: 0.75rem; }
+  .hero { padding: 6rem 0.75rem 2.5rem; }
+  .hero-arc { display: none; } /* fully hide all arcs on very small screens */
+  .hero-right { padding: 20px; }
 }

@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   keywords: "graphic designer, Rashid Khan, Attock, Pakistan, brand identity, logo design, visual design",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
