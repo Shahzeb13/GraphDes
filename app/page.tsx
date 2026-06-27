@@ -30,10 +30,10 @@ export default function Home() {
     <>
       {/* ══════════ NAVBAR ══════════ */}
       <nav className="navbar">
-        <a href="#home" className="navbar-logo" aria-label="Rashid Khan">
-          <span className="logo-first">Rashid</span>
+        <a href="#home" className="navbar-logo" aria-label="Muhammad Rashid">
+          <span className="logo-first">Muhammad</span>
           <span className="logo-dot">✦</span>
-          <span className="logo-last">Khan</span>
+          <span className="logo-last">Rashid</span>
         </a>
 
         <ul className="navbar-links">
@@ -50,7 +50,7 @@ export default function Home() {
       <section id="home" className="hero">
         {/* Left */}
         <div className="hero-left">
-          <p className="hero-greeting">Hello, I&apos;m Rashid.</p>
+          <p className="hero-greeting">Hello, I&apos;m Muhammad.</p>
           <h1 className="hero-title">
             Graphic<br />Designer
           </h1>
@@ -72,7 +72,7 @@ export default function Home() {
             <div className="hero-photo-circle">
               <Image
                 src="/rashid_profile.png"
-                alt="Rashid Khan — Graphic Designer"
+                alt="Muhammad Rashid — Graphic Designer"
                 width={300}
                 height={300}
                 priority
@@ -313,7 +313,7 @@ export default function Home() {
               {[
                 { label: "rashidkhan@gmail.com", href: "mailto:rashidkhan@gmail.com" },
                 { label: "behance.net/rashidkhan", href: "#" },
-                { label: "instagram.com/rashidkhandesign", href: "#" },
+                { label: "instagram.com/muhammadrashid3733", href: "https://www.instagram.com/muhammadrashid3733?igsh=MWtxZHpxcHNhcHk4dQ==" },
                 { label: "linkedin.com/in/rashidkhan", href: "#" },
               ].map((link) => (
                 <a key={link.label} href={link.href} className="contact-link">
@@ -337,7 +337,7 @@ export default function Home() {
       {/* ══════════ FOOTER ══════════ */}
       <footer>
         <p>
-          © 2024 <span>Rashid Khan</span> — Graphic Designer · Attock, Pakistan
+          © 2024 <span>Muhammad Rashid</span> — Graphic Designer · Attock, Pakistan
         </p>
       </footer>
     </>

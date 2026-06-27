@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rashid Khan — Graphic Designer | Attock, Pakistan",
+  title: "Muhammad Rashid — Graphic Designer | Attock, Pakistan",
   description:
-    "Portfolio of Rashid Khan, a creative graphic designer based in Attock, Pakistan. Specializing in brand identity, visual design, and digital illustration.",
-  keywords: "graphic designer, Rashid Khan, Attock, Pakistan, brand identity, logo design, visual design",
+    "Portfolio of Muhammad Rashid, a creative graphic designer based in Attock, Pakistan. Specializing in brand identity, visual design, and digital illustration.",
+  keywords: "graphic designer, Muhammad Rashid, Attock, Pakistan, brand identity, logo design, visual design",
 };
 
 export const viewport = {
