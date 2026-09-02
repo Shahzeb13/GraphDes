@@ -13,6 +13,11 @@
   --text-muted: #6b6b6b;
   --border: #dddbb0;
   --white: #ffffff;
+
+  /* Fonts: Syne (headings) · Cormorant Garamond (display) · DM Sans (body) */
+  --font-heading: 'Syne', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
 }
 
 /* ── Reset & Base ── */
@@ -30,7 +35,7 @@ html {
 body {
   background-color: var(--cream);
   color: var(--navy);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
@@ -65,7 +70,7 @@ body {
 .navbar-logo:hover { opacity: 0.8; }
 
 .logo-first {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-weight: 300;
   font-size: 1.35rem;
@@ -83,7 +88,7 @@ body {
 }
 
 .logo-last {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.1rem;
   color: var(--navy);
@@ -104,7 +109,7 @@ body {
 }
 
 .navbar-links a {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--navy);
@@ -161,7 +166,7 @@ body {
 }
 
 .hero-greeting {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 1.3rem;
   letter-spacing: 0.01em;
@@ -171,7 +176,7 @@ body {
 }
 
 .hero-title {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
@@ -180,7 +185,7 @@ body {
 }
 
 .hero-subtitle {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display);
   font-size: 1.1rem;
   letter-spacing: 0.02em;
   font-size: 1rem;
@@ -194,7 +199,7 @@ body {
   padding: 0.65rem 1.8rem;
   background-color: var(--accent-light);
   color: var(--navy);
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
@@ -411,7 +416,7 @@ section {
 }
 
 .section-heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-display);
   font-size: clamp(4rem, 9vw, 7rem);
   font-weight: 300;
   font-style: italic;
@@ -424,7 +429,7 @@ section {
 }
 
 .section-desc {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-muted);
   max-width: 480px;
@@ -478,7 +483,7 @@ section {
 }
 
 .timeline-year {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--navy);
@@ -487,14 +492,14 @@ section {
 }
 
 .timeline-role {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--navy);
 }
 
 .timeline-desc {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.875rem;
   color: var(--text-muted);
   line-height: 1.65;
@@ -515,7 +520,7 @@ section {
   border-radius: 2px;
   font-size: 0.8rem;
   font-weight: 600;
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   color: var(--navy);
   letter-spacing: 0.03em;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
@@ -572,12 +577,12 @@ section {
 .work-card-date {
   font-size: 0.75rem;
   color: var(--text-muted);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   margin-bottom: 0.3rem;
 }
 
 .work-card-title {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--navy);
@@ -585,7 +590,7 @@ section {
 }
 
 .work-card-desc {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.6;
@@ -620,7 +625,7 @@ section {
 }
 
 .contact-desc {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.75;
@@ -634,7 +639,7 @@ section {
 }
 
 .contact-link {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--navy);
@@ -663,7 +668,7 @@ footer {
   border-top: 1px solid var(--border);
   font-size: 0.8rem;
   color: var(--text-muted);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
 }
 
 footer span {

@@ -1,0 +1,118 @@
+
+> graphicdesigner@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.18.97:3000
+- Environments: .env
+✓ Ready in 3.8s
+⚠ Slow filesystem detected. The benchmark took 282ms. If D:\Fun Apps\graphicdesigner\.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+○ Compiling proxy ...
+
+○ Compiling / ...
+ GET / 200 in 28.9s (next.js: 24.7s, application-code: 4.2s)
+○ Compiling /api/auth/login ...
+ POST /api/auth/login 400 in 5.9s (next.js: 5.7s, application-code: 204ms)
+ POST /api/auth/login 200 in 854ms (next.js: 11ms, application-code: 844ms)
+ GET /api/content 200 in 2.2s (next.js: 1942ms, application-code: 230ms)
+ GET /api/content 200 in 195ms (next.js: 15ms, application-code: 180ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ PUT /api/admin/content 200 in 3.8s (next.js: 3.2s, application-code: 649ms)
+ GET / 200 in 783ms (next.js: 34ms, application-code: 749ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 1395ms (next.js: 587ms, application-code: 808ms)
+ GET /api/content 200 in 319ms (next.js: 151ms, application-code: 168ms)
+ GET /api/content 200 in 205ms (next.js: 61ms, application-code: 143ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 337ms (next.js: 14ms, application-code: 323ms)
+ GET / 200 in 621ms (next.js: 28ms, application-code: 593ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 461ms (next.js: 18ms, application-code: 443ms)
+ GET /api/content 200 in 174ms (next.js: 12ms, application-code: 162ms)
+ GET /api/content 200 in 159ms (next.js: 20ms, application-code: 140ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 374ms (next.js: 16ms, application-code: 357ms)
+ GET / 200 in 407ms (next.js: 11ms, application-code: 396ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 907ms (next.js: 6ms, application-code: 901ms)
+ GET /api/content 200 in 269ms (next.js: 18ms, application-code: 250ms)
+ GET /api/content 200 in 283ms (next.js: 36ms, application-code: 246ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 905ms (next.js: 26ms, application-code: 879ms)
+ GET / 200 in 729ms (next.js: 33ms, application-code: 696ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 915ms (next.js: 15ms, application-code: 900ms)
+ GET /api/content 200 in 190ms (next.js: 7ms, application-code: 184ms)
+ GET /api/content 200 in 147ms (next.js: 5ms, application-code: 142ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 338ms (next.js: 5ms, application-code: 333ms)
+ GET / 200 in 1191ms (next.js: 186ms, application-code: 1005ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 326ms (next.js: 9ms, application-code: 317ms)
+ GET /api/content 200 in 156ms (next.js: 7ms, application-code: 149ms)
+ GET /api/content 200 in 159ms (next.js: 9ms, application-code: 150ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 310ms (next.js: 6ms, application-code: 305ms)
+ GET / 200 in 537ms (next.js: 38ms, application-code: 499ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 311ms (next.js: 5ms, application-code: 306ms)
+ GET /api/content 200 in 137ms (next.js: 5ms, application-code: 132ms)
+ GET /api/content 200 in 136ms (next.js: 4ms, application-code: 132ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 303ms (next.js: 5ms, application-code: 298ms)
+ GET / 200 in 373ms (next.js: 7ms, application-code: 366ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 358ms (next.js: 11ms, application-code: 347ms)
+ GET /api/content 200 in 246ms (next.js: 75ms, application-code: 171ms)
+ GET /api/content 200 in 183ms (next.js: 35ms, application-code: 148ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 391ms (next.js: 55ms, application-code: 335ms)
+ GET / 200 in 774ms (next.js: 18ms, application-code: 756ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 327ms (next.js: 12ms, application-code: 315ms)
+ GET /api/content 200 in 415ms (next.js: 270ms, application-code: 145ms)
+ GET /api/content 200 in 150ms (next.js: 5ms, application-code: 145ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 321ms (next.js: 14ms, application-code: 307ms)
+ GET / 200 in 335ms (next.js: 6ms, application-code: 329ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 312ms (next.js: 4ms, application-code: 308ms)
+ GET /api/content 200 in 313ms (next.js: 34ms, application-code: 278ms)
+ GET /api/content 200 in 322ms (next.js: 181ms, application-code: 141ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 317ms (next.js: 6ms, application-code: 311ms)
+ GET / 200 in 958ms (next.js: 89ms, application-code: 869ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 348ms (next.js: 39ms, application-code: 310ms)
+ GET /api/content 200 in 157ms (next.js: 21ms, application-code: 137ms)
+ GET /api/content 200 in 158ms (next.js: 12ms, application-code: 146ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 344ms (next.js: 32ms, application-code: 312ms)
+ GET / 200 in 342ms (next.js: 14ms, application-code: 329ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 283ms (next.js: 4ms, application-code: 280ms)
+ GET /api/content 200 in 139ms (next.js: 4ms, application-code: 135ms)
+ GET /api/content 200 in 134ms (next.js: 4ms, application-code: 130ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 287ms (next.js: 4ms, application-code: 282ms)
+ GET / 200 in 1422ms (next.js: 5ms, application-code: 1417ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 345ms (next.js: 13ms, application-code: 332ms)
+ GET /api/content 200 in 165ms (next.js: 28ms, application-code: 137ms)
+ GET /api/content 200 in 195ms (next.js: 6ms, application-code: 189ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 440ms (next.js: 55ms, application-code: 385ms)
+ GET / 200 in 441ms (next.js: 7ms, application-code: 434ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 293ms (next.js: 5ms, application-code: 288ms)
+ GET /api/content 200 in 139ms (next.js: 4ms, application-code: 135ms)
+ GET /api/content 200 in 141ms (next.js: 4ms, application-code: 138ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 311ms (next.js: 14ms, application-code: 297ms)
+ GET / 200 in 565ms (next.js: 15ms, application-code: 551ms)
+(node:14092) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+ PUT /api/admin/content 200 in 1052ms (next.js: 691ms, application-code: 361ms)
+[?25h

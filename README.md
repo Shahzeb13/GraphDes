@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio + Admin Panel
 
-## Getting Started
+A fully customizable portfolio with a built-in admin panel to edit **every** section —
+hero, about, work, contact, theme colors, fonts, SEO — without touching code.
 
-First, run the development server:
+- **Next.js 16** (App Router) + React 19 + Tailwind CSS 4
+- **MongoDB** via **Mongoose** (all site content lives in one `sitecontent` doc)
+- **JWT** auth (signed `admin_token` HttpOnly cookie, verified with `jsonwebtoken` +
+  an Edge-compatible Web Crypto check in `proxy.ts` — Next 16's renamed middleware)
+- **bcryptjs** password hashing
+- **Cloudinary** image / PDF uploads (URLs stored in MongoDB)
+
+## Setup
+
+### 1. Environment variables
+
+Copy `.env.example` to `.env` and fill in your credentials:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/portfolio
+CLOUDINARY_CLOUD_NAME=...
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
+JWT_SECRET=<any long random string>
+ADMIN_EMAIL=admin@rashid.dev
+ADMIN_PASSWORD=admin12345
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Note: `MONGODB_URI`, `CLOUDINARY_*` and `JWT_SECRET` must also be added to your
+> **Vercel project settings — Environment Variables** before deploying.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Install & seed
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run seed       # creates the admin account + seeds the default portfolio
+npm run dev        # http://localhost:3000
+```
 
-## Learn More
+The seed is idempotent — it skips anything that already exists.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Open the admin panel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Visit **http://localhost:3000/admin/login** and sign in with the credentials from
+your `.env`. You're redirected there automatically if you open any `/admin/*` page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Admin features
 
-## Deploy on Vercel
+| Page | What you can edit |
+| --- | --- |
+| **Profile** | Logo text, nav links, hero greeting / title / subtitle, profile photo (Cloudinary), resume PDF |
+| **About** | Bio, skills list, stats ("By The Numbers"), experience timeline |
+| **Work** | Project cards — cover image, date, title, description |
+| **Contact** | Heading, description, image, CTA button, contact links |
+| **Settings** | SEO meta, footer text, **theme colors** (color pickers), fonts, custom CSS |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Changes are saved to MongoDB and appear on the site on the next visit.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Common scripts
+
+```bash
+npm run dev        # development server (port 3000)
+npm run build      # production build
+npm run start      # production server
+npm run lint       # eslint
+npm run typecheck  # tsc --noEmit
+npm run seed       # seed admin + default content
+```
+
+## Architecture
+
+```
+Browser /            (portfolio, server-rendered from MongoDB)
+        /admin/*    (protected editors)
+             |
+             |-- PUT /api/admin/content --> Mongoose (SiteContent)
+             |-- POST /api/admin/upload --> Cloudinary --> URL stored in Mongo
+             +-- /api/auth/* --> Mongoose (AdminUser) + JWT HttpOnly cookie
+```
+
+- `proxy.ts` — guards `/admin/*`, redirects to `/admin/login`.
+- `(panel)/layout.tsx` — real authorization (JWT verify + DB lookup).
+- `lib/content.ts` — `getContent()` (with `DEFAULT_CONTENT` fallback so the site
+  always renders even if MongoDB is unreachable) and `saveContent()`.
+- `lib/validate.ts` — whitelists and sanitizes every admin save + upload.
+
+## Deploying to Vercel
+
+1. Push this repo to GitHub and import it in Vercel.
+2. Add all env vars (including `MONGODB_URI`, `CLOUDINARY_*`, `JWT_SECRET`).
+3. Create the MongoDB collection + admin account by running the seed **once**
+   against the same cluster:
+   ```bash
+   MONGODB_URI=... ADMIN_EMAIL=... ADMIN_PASSWORD=... npx tsx scripts/seed.ts
+   ```
+4. Deploy. The admin panel lives at `your-site.vercel.app/admin/login`.
+
+> Serverless-safe: sessions are stateless JWTs in cookies, the Mongoose connection
+> is cached per instance, and uploads go straight to Cloudinary (no server disk writes).

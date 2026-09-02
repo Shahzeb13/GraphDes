@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "name": "Studio Admin / StudioOS Design Tokens",
+    "description": "Design tokens extracted from the admin dashboard mockups (web.html, web2.html, mobile.html, mobile2.html). All four mockups share one consistent token set — a Material Design 3-style, olive/gold-toned light theme.",
+    "colorSystem": "Material Design 3 color roles",
+    "themeMode": "light",
+    "version": "1.0.0"
+  },
+  "color": {
+    "primary": {
+      "primary": "#6a5f00",
+      "onPrimary": "#ffffff",
+      "primaryContainer": "#c2b23e",
+      "onPrimaryContainer": "#4c4400",
+      "primaryFixed": "#f6e46b",
+      "primaryFixedDim": "#d9c852",
+      "onPrimaryFixed": "#201c00",
+      "onPrimaryFixedVariant": "#504700",
+      "inversePrimary": "#d9c852"
+    },
+    "secondary": {
+      "secondary": "#595d73",
+      "onSecondary": "#ffffff",
+      "secondaryContainer": "#dbdef8",
+      "onSecondaryContainer": "#5e6177",
+      "secondaryFixed": "#dee1fb",
+      "secondaryFixedDim": "#c2c5de",
+      "onSecondaryFixed": "#161b2d",
+      "onSecondaryFixedVariant": "#42465a"
+    },
+    "tertiary": {
+      "tertiary": "#5e5f55",
+      "onTertiary": "#ffffff",
+      "tertiaryContainer": "#b1b1a5",
+      "onTertiaryContainer": "#42443b",
+      "tertiaryFixed": "#e3e3d6",
+      "tertiaryFixedDim": "#c7c7bb",
+      "onTertiaryFixed": "#1b1c14",
+      "onTertiaryFixedVariant": "#46483e"
+    },
+    "error": {
+      "error": "#ba1a1a",
+      "onError": "#ffffff",
+      "errorContainer": "#ffdad6",
+      "onErrorContainer": "#93000a"
+    },
+    "surface": {
+      "surface": "#fafbe5",
+      "onSurface": "#1a1d10",
+      "surfaceVariant": "#e3e4cf",
+      "onSurfaceVariant": "#4a4736",
+      "surfaceDim": "#dadbc7",
+      "surfaceBright": "#fafbe5",
+      "surfaceContainerLowest": "#ffffff",
+      "surfaceContainerLow": "#f4f5e0",
+      "surfaceContainer": "#eeefda",
+      "surfaceContainerHigh": "#e9ead5",
+      "surfaceContainerHighest": "#e3e4cf",
+      "surfaceTint": "#6a5f00",
+      "inverseSurface": "#2f3223",
+      "inverseOnSurface": "#f1f2dd"
+    },
+    "background": {
+      "background": "#fafbe5",
+      "onBackground": "#1a1d10"
+    },
+    "outline": {
+      "outline": "#7c7764",
+      "outlineVariant": "#ccc7b1"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "display": ["Anybody", "sans-serif"],
+      "title": ["Anybody", "sans-serif"],
+      "headline": ["Domine", "serif"],
+      "body": ["Work Sans", "sans-serif"],
+      "label": ["Work Sans", "sans-serif"],
+      "icon": ["Material Symbols Outlined"]
+    },
+    "googleFontsImport": "family=Anybody:wght@700;800&family=Domine:wght@400;700&family=Work+Sans:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1",
+    "scale": {
+      "display-lg": {
+        "fontFamily": "Anybody",
+        "fontSize": "48px",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em",
+        "fontWeight": 800,
+        "usage": "Desktop hero/greeting headline, metric numbers"
+      },
+      "display-lg-mobile": {
+        "fontFamily": "Anybody",
+        "fontSize": "36px",
+        "lineHeight": "1.1",
+        "letterSpacing": "normal",
+        "fontWeight": 800,
+        "usage": "Mobile hero headline, mobile metric numbers"
+      },
+      "headline-serif": {
+        "fontFamily": "Domine",
+        "fontSize": "32px",
+        "lineHeight": "1.2",
+        "letterSpacing": "normal",
+        "fontWeight": 400,
+        "usage": "Desktop section headings (e.g. sidebar logo, card titles)"
+      },
+      "headline-serif-mobile": {
+        "fontFamily": "Domine",
+        "fontSize": "28px",
+        "lineHeight": "1.2",
+        "letterSpacing": "normal",
+        "fontWeight": 400,
+        "usage": "Mobile section headings"
+      },
+      "title-md": {
+        "fontFamily": "Anybody",
+        "fontSize": "18px",
+        "lineHeight": "1.4",
+        "letterSpacing": "normal",
+        "fontWeight": 700,
+        "usage": "Card/panel titles, app bar brand name"
+      },
+      "body-lg": {
+        "fontFamily": "Work Sans",
+        "fontSize": "16px",
+        "lineHeight": "1.6",
+        "letterSpacing": "normal",
+        "fontWeight": 400,
+        "usage": "Subtitle/intro text under headings"
+      },
+      "body-md": {
+        "fontFamily": "Work Sans",
+        "fontSize": "14px",
+        "lineHeight": "1.5",
+        "letterSpacing": "normal",
+        "fontWeight": 400,
+        "usage": "Default body copy, list items"
+      },
+      "label-sm": {
+        "fontFamily": "Work Sans",
+        "fontSize": "12px",
+        "lineHeight": "1",
+        "letterSpacing": "0.05em",
+        "fontWeight": 600,
+        "usage": "Nav links, buttons, uppercase eyebrow labels, timestamps"
+      }
+    }
+  },
+  "spacing": {
+    "grid-gutter": "16px",
+    "container-margin": "20px",
+    "stack-gap": "24px",
+    "section-padding": "40px"
+  },
+  "borderRadius": {
+    "DEFAULT": "0.25rem",
+    "lg": "0.5rem",
+    "xl": "0.75rem",
+    "full": "9999px"
+  },
+  "opacity": {
+    "5": 0.05,
+    "10": 0.1,
+    "20": 0.2,
+    "30": 0.3,
+    "40": 0.4,
+    "50": 0.5,
+    "80": 0.8,
+    "usage": "Applied to border/bg/text colors for subtle dividers, glass surfaces, and overlays (e.g. border-outline-variant/30, bg-surface/80)"
+  },
+  "elevation": {
+    "shadow-sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+    "glass-panel": {
+      "backgroundColor": "rgba(226, 226, 213, 0.5)",
+      "backgroundColorToken": "tertiary-fixed-dim @ 50%",
+      "backdropFilter": "blur(12px)",
+      "border": "1px solid rgba(212, 212, 197, 0.4)"
+    },
+    "blur-header": {
+      "backdropFilter": "blur(24px)",
+      "usage": "backdrop-blur-xl on sticky/fixed TopAppBar, paired with surface/80 or surface-dim/80 background"
+    }
+  },
+  "gradient": {
+    "chart-bar": {
+      "type": "linear-gradient",
+      "direction": "to top",
+      "stops": ["#6a5f00 0%", "#c2b23e 100%"],
+      "stopsTokens": ["primary", "primary-container"],
+      "usage": "Bar chart fills"
+    }
+  },
+  "zIndex": {
+    "base": 0,
+    "content": 10,
+    "topAppBar": 40,
+    "sideNav": 50,
+    "notes": "sideNav (SideNavBar) sits at z-50, above the sticky TopAppBar at z-40"
+  },
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px"
+  },
+  "layout": {
+    "topAppBarHeight": "64px",
+    "bottomNavHeight": "80px",
+    "sideNavWidthDesktop": "256px",
+    "sideNavWidthTablet": "320px",
+    "maxContentWidth": "1280px",
+    "mobilePageContentPaddingTop": "calc(4rem + 24px)",
+    "mobilePageContentPaddingBottom": "calc(5rem + 24px)"
+  },
+  "iconography": {
+    "font": "Material Symbols Outlined",
+    "default": {
+      "FILL": 0,
+      "wght": 400,
+      "GRAD": 0,
+      "opsz": 24
+    },
+    "filled": {
+      "FILL": 1,
+      "wght": 400,
+      "GRAD": 0,
+      "opsz": 24
+    }
+  },
+  "scrollbar": {
+    "width": "8px",
+    "height": "8px",
+    "track": "#fafbe5",
+    "trackToken": "background",
+    "thumb": "#ccc7b1",
+    "thumbToken": "outline-variant",
+    "thumbHover": "#b1b1a5",
+    "thumbHoverToken": "tertiary-container",
+    "radius": "4px"
+  }
+}
