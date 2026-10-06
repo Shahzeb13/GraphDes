@@ -6,6 +6,94 @@ import { useAdminContent } from "../../components/AdminContent";
 import { SaveBar } from "../../components/SaveBar";
 import { Button, Card, Field, PageHeader, RowHead, TextArea, TextInput } from "../../components/ui";
 
+/* ─────────────────────────────────────────────
+   SkillEditor — type a skill, press Enter to add
+   Enter / "," commits. Backspace on an empty
+   field removes the last chip. Chips are also
+   individually removable via their × button.
+   Duplicate and blank entries are ignored.
+───────────────────────────────────────────── */
+function SkillEditor({
+  skills,
+  onChange,
+}: {
+  skills: string[];
+  onChange: (skills: string[]) => void;
+}) {
+  const [draft, setDraft] = useState("");
+
+  function commit(raw: string) {
+    const value = raw.trim().replace(/,+$/, "").trim();
+    if (!value) {
+      setDraft("");
+      return;
+    }
+    if (!skills.some((s) => s.toLowerCase() === value.toLowerCase())) {
+      onChange([...skills, value]);
+    }
+    setDraft("");
+  }
+
+  function removeAt(index: number) {
+    onChange(skills.filter((_, i) => i !== index));
+  }
+
+  return (
+    <div className="a-skill-editor">
+      {skills.length ? (
+        <div className="a-tag-preview">
+          {skills.map((skill, i) => (
+            <span key={`${skill}-${i}`} className="a-tag-chip">
+              {skill}
+              <button
+                type="button"
+                className="a-tag-chip-x"
+                onClick={() => removeAt(i)}
+                aria-label={`Remove ${skill}`}
+              >
+                ×
+              </button>
+            </span>
+          ))}
+        </div>
+      ) : null}
+
+      <div className="a-skill-editor-row">
+        <input
+          className="a-input a-skill-editor-input"
+          value={draft}
+          placeholder={skills.length ? "Add another skill…" : "Brand Identity"}
+          onChange={(e) => setDraft(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === ",") {
+              e.preventDefault();
+              commit(draft);
+              return;
+            }
+            if (e.key === "Backspace" && draft === "" && skills.length) {
+              removeAt(skills.length - 1);
+            }
+          }}
+          onBlur={() => commit(draft)}
+        />
+        <Button
+          variant="ghost"
+          onClick={() => commit(draft)}
+          disabled={draft.trim() === ""}
+        >
+          Add
+        </Button>
+      </div>
+
+      {!skills.length ? (
+        <span className="a-field-hint">
+          Your skills will show up here as you add them.
+        </span>
+      ) : null}
+    </div>
+  );
+}
+
 export default function AboutPage() {
   const { content, saving, error, save } = useAdminContent();
   const [about, setAbout] = useState<AboutData>(content.about);
@@ -45,7 +133,7 @@ export default function AboutPage() {
       {/* SKILLS_CARD */}
       <Card title="Your skills" icon="✎">
         <p className="a-card-note">
-          Type one skill per line. Each line shows up as a small button on your site.
+          Type a skill and press Enter to add it. Each skill shows up as a small button on your site.
         </p>
         <Field label="Heading for this list" hint="Example: What I work with">
           <TextInput
@@ -54,23 +142,12 @@ export default function AboutPage() {
             placeholder="What I work with"
           />
         </Field>
-        <Field label="Your skills" hint="One per line — press Enter after each one.">
-          <TextArea
-            rows={8}
-            value={about.skills.join("\n")}
-            onChange={(v) =>
-              setAbout({ ...about, skills: v.split("\n").map((s) => s.trim()).filter(Boolean) })
-            }
-            placeholder={"Brand Identity\nTypography\nMotion Design"}
+        <Field label="Your skills" hint="Press Enter or the Add button after each skill.">
+          <SkillEditor
+            skills={about.skills}
+            onChange={(skills) => setAbout({ ...about, skills })}
           />
         </Field>
-        <div className="a-tag-preview">
-          {about.skills.length ? (
-            about.skills.map((skill, i) => <span key={`${skill}-${i}`}>{skill}</span>)
-          ) : (
-            <span className="a-tag-empty">Your skills will preview here</span>
-          )}
-        </div>
       </Card>
 
       {/* STATS_CARD */}

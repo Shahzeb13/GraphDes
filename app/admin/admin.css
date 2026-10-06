@@ -1132,6 +1132,56 @@ select.a-input {
 }
 
 /* ─────────────────────────────────────────────
+   SKILL EDITOR — chip entry for the skills list
+───────────────────────────────────────────── */
+.a-skill-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.a-skill-editor-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.a-skill-editor-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* A chip is a real editable item, so it gets a remove button */
+.a-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.a-tag-chip-x {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 1;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--col-on-surface-variant);
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.a-tag-chip-x:hover {
+  color: var(--col-on-surface);
+  background-color: var(--col-on-surface);
+  color: var(--col-surface);
+}
+
+/* ─────────────────────────────────────────────
    HAMBURGER + DRAWER NAV (mobile)
 ───────────────────────────────────────────── */
 
