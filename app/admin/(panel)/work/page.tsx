@@ -17,27 +17,35 @@ export default function WorkPage() {
 
   return (
     <div>
-      <PageHeader title="Work" subtitle="Manage your project cards and gallery." />
+      <PageHeader title="Work" subtitle="Show off your projects — just add each one." />
 
-      <Card title="Section header" icon="▣">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <Field label="Section heading">
-            <TextInput value={work.heading} onChange={(v) => setWork({ ...work, heading: v })} />
-          </Field>
-          <Field label="Section description">
-            <TextArea
-              rows={2}
-              value={work.desc}
-              onChange={(v) => setWork({ ...work, desc: v })}
-            />
-          </Field>
-        </div>
+      <Card title="Heading for this section" icon="▣">
+        <Field label="Heading" hint="A short title above your project cards.">
+          <TextInput
+            value={work.heading}
+            onChange={(v) => setWork({ ...work, heading: v })}
+            placeholder="Selected Work"
+          />
+        </Field>
+        <Field label="Short description" hint="One or two lines under the heading.">
+          <TextArea
+            rows={2}
+            value={work.desc}
+            onChange={(v) => setWork({ ...work, desc: v })}
+            placeholder="A few projects I'm proud of…"
+          />
+        </Field>
       </Card>
+
+      <p className="a-card-note">
+        Each project becomes one card on your site. Add as many as you like, in the order you
+        want them shown.
+      </p>
 
       <div className="space-y-4">
         {work.projects.map((project, i) => (
           <Card
-            key={`${project.title}-${i}`}
+            key={i}
             title={`Project ${i + 1}`}
             actions={
               <Button
@@ -51,7 +59,7 @@ export default function WorkPage() {
             }
           >
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-[auto_1fr]">
-              <Field label="Cover image">
+              <Field label="Project picture" hint="JPG or PNG — this is the big image on the card.">
                 <ImageUpload
                   value={project.img}
                   onUploaded={(url) => {
@@ -59,10 +67,12 @@ export default function WorkPage() {
                     projects[i] = { ...project, img: url };
                     setWork({ ...work, projects });
                   }}
+                  label="Upload picture"
+                  className="h-28 w-40"
                 />
               </Field>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <Field label="Date">
+                <Field label="When">
                   <TextInput
                     value={project.date}
                     onChange={(v) => {
@@ -73,7 +83,7 @@ export default function WorkPage() {
                     placeholder="March 2024"
                   />
                 </Field>
-                <Field label="Title">
+                <Field label="Project name">
                   <TextInput
                     value={project.title}
                     onChange={(v) => {
@@ -86,7 +96,7 @@ export default function WorkPage() {
                 </Field>
               </div>
             </div>
-            <Field label="Description">
+            <Field label="What you made" hint="A sentence or two about this project.">
               <TextArea
                 rows={3}
                 value={project.desc}
@@ -95,16 +105,7 @@ export default function WorkPage() {
                   projects[i] = { ...project, desc: v };
                   setWork({ ...work, projects });
                 }}
-              />
-            </Field>
-            <Field label="Image URL (or keep the uploaded one)">
-              <TextInput
-                value={project.img}
-                onChange={(v) => {
-                  const projects = [...work.projects];
-                  projects[i] = { ...project, img: v };
-                  setWork({ ...work, projects });
-                }}
+                placeholder="A full brand refresh, from logo to packaging…"
               />
             </Field>
           </Card>
@@ -121,7 +122,7 @@ export default function WorkPage() {
             })
           }
         >
-          + Add project
+          + Add another project
         </Button>
       </div>
 

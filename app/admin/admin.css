@@ -1045,12 +1045,90 @@ select.a-input {
   font-size: var(--text-body-md-size);
 }
 
-/* Timeline entry card (about page) */
-.a-timeline-entry {
+/* ─────────────────────────────────────────────
+   PLAIN-LANGUAGE EDITOR HELPERS (about page)
+   Rows = repeatable items a layman adds/removes
+   Labels are always visible, never placeholder-only
+───────────────────────────────────────────── */
+
+.a-card-note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md-size);
+  line-height: 1.6;
+  color: var(--col-on-surface-variant);
+}
+
+.a-row-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.a-row {
   border: 1px solid var(--col-outline-variant);
   border-radius: var(--radius-lg);
   background-color: var(--col-surface-container-low);
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.a-row-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--col-outline-variant);
+}
+
+.a-row-head-title {
+  font-family: var(--font-label);
+  font-size: var(--text-label-sm-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--col-primary);
+}
+
+.a-row-remove {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-label);
+  font-size: var(--text-label-sm-size);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--col-error);
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  transition: background-color 0.15s;
+}
+
+.a-row-remove:hover { background-color: var(--col-error-container); }
+
+/* Live preview of pill-shaped items (skills) */
+.a-tag-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.a-tag-preview > span {
+  font-family: var(--font-body);
+  font-size: var(--text-label-sm-size);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--col-surface-container-high);
+  border: 1px solid var(--col-outline-variant);
+  color: var(--col-on-surface);
+}
+
+.a-tag-preview > span.a-tag-empty {
+  background: none;
+  border-style: dashed;
+  color: var(--col-on-surface-variant);
 }
 
 /* ─────────────────────────────────────────────

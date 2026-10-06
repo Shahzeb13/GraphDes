@@ -48,7 +48,7 @@ your `.env`. You're redirected there automatically if you open any `/admin/*` pa
 
 | Page | What you can edit |
 | --- | --- |
-| **Profile** | Logo text, nav links, hero greeting / title / subtitle, profile photo (Cloudinary), resume PDF |
+| **Profile** | Hero greeting / title / subtitle, profile photo (Cloudinary), resume PDF |
 | **About** | Bio, skills list, stats ("By The Numbers"), experience timeline |
 | **Work** | Project cards — cover image, date, title, description |
 | **Contact** | Heading, description, image, CTA button, contact links |

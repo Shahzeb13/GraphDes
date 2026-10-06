@@ -178,3 +178,34 @@ export function PageHeader({
     </div>
   );
 }
+
+/* ─────────────────────────────────────────────
+   RowHead — header bar of a repeatable item row
+   Rows MUST use a stable (index) React key, never
+   a key built from the row's own editable text.
+───────────────────────────────────────────── */
+export function RowHead({
+  index,
+  noun,
+  onRemove,
+}: {
+  index: number;
+  noun: string;
+  onRemove: () => void;
+}) {
+  return (
+    <div className="a-row-head">
+      <span className="a-row-head-title">
+        {noun} {index + 1}
+      </span>
+      <button
+        type="button"
+        className="a-row-remove"
+        onClick={onRemove}
+        aria-label={`Remove ${noun.toLowerCase()} ${index + 1}`}
+      >
+        Remove
+      </button>
+    </div>
+  );
+}
